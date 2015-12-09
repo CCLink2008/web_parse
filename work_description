@@ -1,0 +1,60 @@
+
+Ruby script to parse HTML
+Scripts & Utilities Posted 15 hours ago - View Job Posting
+Fixed Price
+Deliver by - Dec 11, 2015
+$$
+Intermediate
+I am looking for a mix of experience and value
+$30
+Budget
+Description
+
+This should be a pretty simple task for a skilled ruby developer.  We do most of our development in Ruby, but don't have time to finish this task, so we're posting here instead.
+
+We'd like a script that does the following:
+
+* visit this page: http://www.cobbchamber.org/allcategories
+* for each category on that page, visit the category page and save the following information for each record listed:
+
+* category
+* company name
+* street address
+* street address 2
+* city
+* state
+* postal code
+* phone number
+* contact salutation
+* contact first name
+* contact last name
+* contact credentials (e.g., CPA, MD, MBA, etc - put stuff like JR here too)
+* member since (year)
+* company website address (the URL from "visit site")
+* facebook link
+* twitter link
+* linkedin link
+* youtube link
+* google plus link
+* pinterest link
+* instagram link
+* foursquare link
+
+All of this information should be able to be parsed from the HTML response from each page.  But the page markup is inconsistent, especially those pages with only one record.  So be aware of that.
+
+Some records don't have the social media links, a "street address 2", and so forth.  So for each record, get as much as you can, based on what's present.
+
+Critical stuff:
+
+* each entry's "category" can be derived from the category page url, but please format it so that it looks like regular text.  in other words, instead of "/Access-Systems" for the category, it should be "Access Systems"
+* use whatever gems you need to in order to implement this.  we did an initial version of this using the "nokogiri" gem, which worked pretty well
+* use an up-to-date version of ruby, at least 2.0
+* please use good Object Oriented practices in creating this since it will likely get re-used.  don't just create one long method to fetch the URLs, parse the response and create the CSV.  we'd like this to be as maintainable as possible in case things need to be changed down the road.
+* I should be able to re-run this and not alter any existing CSV files.  so ideally, this will create a timestamped CSV file each time it is run and save to that file.
+
+Ideal but not required stuff:
+* ability to only save the items that have changed to the CSV file, versus every record.  if you have a quick way to implement this, go ahead.  otherwise, this is not required.  if it takes more than an hour of additional work, please don't worry about implementing this part.
+
+Deliverables:
+1. Working ruby script / files that implement the features detailed above
+2. Final CSV that includes all records from the categories with all of the information detailed above in the bullet points
