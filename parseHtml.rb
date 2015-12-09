@@ -169,9 +169,9 @@ def generateCsv(url)
 
   page = Nokogiri::HTML(open("#{url}/allcategories"))
   
-  name  = Time.now.year.to_s+'-'+ Time.now.month.to_s+'-'+Time.now.day.to_s+'---'+Time.now.hour.to_s+'-'+Time.now.min.to_s+'-'+Time.now.sec.to_s
+  name  = Time.now.year.to_s+'-'+ Time.now.month.to_s+'-'+Time.now.day.to_s+'--'+Time.now.hour.to_s+'-'+Time.now.min.to_s+'-'+Time.now.sec.to_s
   CSV.open("#{name}.csv", "wb") do |csv|
-    csv << getHeader()    # csv << ["fox", "1", "$90.00"]
+    csv << getHeader()    
      page.css('.ListingCategories_AllCategories_CATEGORY').each do |item|
        sub_url = url +  item.at_css('a')[:href]      
        csv << ["#{item.at_css('a')[:href][1..-1]}"] 
